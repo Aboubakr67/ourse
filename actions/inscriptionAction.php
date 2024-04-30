@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('config/database.php');
+require('../config/database.php');
 
 if (isset($_POST['validate'])) {
     if (!empty(!empty($_POST['pseudo'] && $_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirmPassword']) )) {
