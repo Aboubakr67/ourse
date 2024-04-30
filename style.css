@@ -51,7 +51,7 @@ a{
 }
 
 
-/*LOGIN*/
+/*CONNEXION-INSCRIPTION*/
 
 .formulaire {
     display: flex;
@@ -68,7 +68,7 @@ a{
     width: 40%;
     border-radius: 8px;
     margin :0 auto;
-    margin-top : 200px;
+    margin-top : 150px;
     flex-direction: column;
     justify-content: center;
 }
