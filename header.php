@@ -15,8 +15,8 @@ date_default_timezone_set('Europe/Paris');
     <title>OURSE</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-grid.min.css" integrity="sha512-i1b/nzkVo97VN5WbEtaPebBG8REvjWeqNclJ6AItj7msdVcaveKrlIIByDpvjk5nwHjXkIqGZscVxOrTb9tsMA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -28,9 +28,9 @@ date_default_timezone_set('Europe/Paris');
         <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
         <a href="index.php">Découvrez l'Ourse</a>
         <a href="adhesion.php">Adhérer</a>
-        <a href="la-carte.php">Nos professionnels</a>
         
         <?php if (isset($_SESSION['auth'])) { ?>
+            <a href="la-carte.php">Nos professionnels</a>
             <a href="actualite.php">Actualités</a>
             <a href="profil.php">Mon Profil</a>
             <a href="actions/deconnexion.php">Déconnexion</a>
