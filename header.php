@@ -35,6 +35,7 @@ date_default_timezone_set('Europe/Paris');
             <a href="profil.php">Mon Profil</a>
             <a href="actions/deconnexion.php">Déconnexion</a>
         <?php } else { ?>
+            <a href="inscription.php">Inscription</a>
             <a href="connexion.php">Connexion</a>
         <?php } ?>
         
