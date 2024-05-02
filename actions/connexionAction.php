@@ -17,7 +17,7 @@ if (isset($_POST['validate'])) {
 
         $bdd = connexion();
 
-        $sql = "SELECT id_user, pseudo, email, password FROM USERS WHERE email = :email";
+        $sql = "SELECT * FROM USERS WHERE email = :email";
         $stmt = $bdd->prepare($sql);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -37,6 +37,7 @@ if (isset($_POST['validate'])) {
             $_SESSION['id'] = $user['id_user'];
             $_SESSION['pseudo'] = $user['pseudo'];
             $_SESSION['email'] = $user['email'];
+            $_SESSION['role'] = $user['role'];
 
             header('Location: ../actualite.php');
             exit();

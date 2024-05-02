@@ -30,16 +30,17 @@ if (isset($_POST['validate'])) {
                 $password = password_hash($password, PASSWORD_DEFAULT);
                 // $bdd = connexion();
                 // On insère l'user dans la bdd
-                $sql = "INSERT INTO USERS (pseudo, email, password) VALUES (:pseudo, :email, :password)";
+                $sql = "INSERT INTO USERS (pseudo, email, password, role) VALUES (:pseudo, :email, :password, :role)";
                 $stmt = $bdd->prepare($sql);
                 $stmt->bindParam(':pseudo', $pseudo);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $password);
+                $stmt->bindParam(':role', "user-standard");
                 $stmt->execute();
 
 
                 // Requete pour récuperer l'user dans la bdd
-                $sql = "SELECT id_user, pseudo, email FROM USERS WHERE email = :email";
+                $sql = "SELECT * FROM USERS WHERE email = :email";
                 $stmt = $bdd->prepare($sql);
                 $stmt->bindParam(':email', $email);
                 $stmt->execute();
@@ -50,6 +51,7 @@ if (isset($_POST['validate'])) {
                 $_SESSION['id'] = $user['id_user'];
                 $_SESSION['pseudo'] = $user['pseudo'];
                 $_SESSION['email'] = $user['email'];
+                $_SESSION['role'] = $user['role'];
 
 
 

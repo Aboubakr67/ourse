@@ -2,6 +2,7 @@
 session_start();
 
 require('../utils/check_extension.php');
+require('../config/database.php');
 require('../models/actualiteModel.php');
 
 // On vérifie que l'utilisateur à bien cliquer sur submit

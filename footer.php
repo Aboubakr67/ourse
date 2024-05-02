@@ -6,7 +6,7 @@
     height: 100px; /* Hauteur de 300 pixels */
     background-color: red; /* Couleur de fond rouge */
     bottom: 0;
-    position: fixed;
+    /* position: fixed; */
 }
 
 </style>

@@ -5,6 +5,9 @@
 -- DROP TABLE ACTUALITE;
 -- DROP TABLE USERS;
 -- DROP PROCEDURE CreerActualite;
+-- DROP PROCEDURE GetActualites;
+-- DROP PROCEDURE GetActualiteByID;
+-- DROP PROCEDURE UpdateActualite;
 
 CREATE TABLE USERS (
     id_user INT PRIMARY KEY AUTO_INCREMENT,
@@ -22,7 +25,7 @@ CREATE TABLE ACTUALITE (
     description TEXT,
     date DATE,
     heure VARCHAR(50),
-    image VARCHAR(50),
+    image VARCHAR(255),
     ville VARCHAR(50),
     lien VARCHAR(255),
     id_user INT,
@@ -44,11 +47,11 @@ VALUES ('ab', 'ab@gmail.com', '$2y$10$9mQJTErtJ7EgwEopdn4j4.fLDQisEfLeFtGWHGRWzS
 
 
 -- Insertion des actualités 
-INSERT INTO ACTUALITE (titre, description, date, heure, image, ville, lien, id_user) 
-VALUES ('Nouvelle exposition', 'Découvrez notre nouvelle exposition', '2024-05-01', '14:00', "image1.jpg", 'Paris', 'https://exemple.com/exposition', 1);
+-- INSERT INTO ACTUALITE (titre, description, date, heure, image, ville, lien, id_user) 
+-- VALUES ('Nouvelle exposition', 'Découvrez notre nouvelle exposition', '2024-05-01', '14:00', "image1.jpg", 'Paris', 'https://exemple.com/exposition', 1);
 
-INSERT INTO ACTUALITE (titre, description, date, image, ville, id_user) 
-VALUES ('Nouveau produit', 'Découvrez notre nouveau produit', '2024-05-10', "image2.jpg", 'New York', 2);
+-- INSERT INTO ACTUALITE (titre, description, date, image, ville, id_user) 
+-- VALUES ('Nouveau produit', 'Découvrez notre nouveau produit', '2024-05-10', "image2.jpg", 'New York', 2);
 
 
 
@@ -60,7 +63,7 @@ CREATE PROCEDURE CreerActualite(
     IN p_description TEXT,
     IN p_date DATE,
     IN p_heure VARCHAR(50),
-    IN p_image VARCHAR(50),
+    IN p_image VARCHAR(255),
     IN p_ville VARCHAR(50),
     IN p_lien VARCHAR(255),
     IN p_id_user INT
@@ -71,9 +74,6 @@ BEGIN
     VALUES (p_titre, p_description, p_date, IFNULL(p_heure, NULL), p_image, p_ville, IFNULL(p_lien, NULL), p_id_user);
 END$$
 DELIMITER ;
-
-
-
 
 -- Exemple d'appelle à la procédure stockée :
 -- CALL CreerActualite(
@@ -86,3 +86,71 @@ DELIMITER ;
 --     'https://exemple.com/exposition',
 --     1
 -- );
+
+
+-- Récuperer toutes les actualités
+DELIMITER $$
+CREATE PROCEDURE GetActualites()
+BEGIN
+    SELECT *
+    FROM ACTUALITE
+    ORDER BY date ASC, heure ASC;
+END$$
+DELIMITER ;
+-- CALL GetActualites();
+
+
+-- Récuperer une actualité
+DELIMITER $$
+CREATE PROCEDURE GetActualiteByID(IN p_id_actualite INT)
+BEGIN
+    SELECT * FROM ACTUALITE WHERE id_actualite = p_id_actualite;
+END$$
+DELIMITER ;
+
+-- CALL GetActualiteByID(1);
+
+
+-- Modifier une actualité
+-- Modifier une actualité
+DELIMITER $$
+CREATE PROCEDURE UpdateActualite(
+    IN p_id_actualite INT,
+    IN p_titre VARCHAR(255),
+    IN p_description TEXT,
+    IN p_date DATE,
+    IN p_heure VARCHAR(50),
+    IN p_nom_image VARCHAR(255),
+    IN p_ville VARCHAR(255),
+    IN p_lien VARCHAR(255),
+    IN p_id_user INT
+)
+BEGIN
+    UPDATE ACTUALITE
+    SET
+        titre = p_titre,
+        description = p_description,
+        date = p_date,
+        heure = p_heure,
+        image = p_nom_image,
+        ville = p_ville,
+        lien = p_lien,
+        id_user = p_id_user
+    WHERE
+        id_actualite = p_id_actualite;
+END$$
+DELIMITER ;
+
+
+-- Appelle de la procédure
+CALL UpdateActualite(
+    2, 
+    'Nouveau titre', 
+    'Nouvelle description',
+    '2024-05-30', 
+    '15:00', 
+    'ourse66329520768ca.png', 
+    'Nouvelle ville', 
+    'http://example.com/nouveau-lien', 
+    3 
+);
