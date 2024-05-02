@@ -1,15 +1,14 @@
 </div>
-<footer>ICI LE FOOTER</footer>
+<footer>
+    <a href="index.php">Mentions légales</a>
+    <p>L'OURSE, Mairie de Muzillac allée Duigou 56190 Muzillac  06 81 35 98 99</p>
+    <a href="">FACEBOOK</a>
 
-<style>
-    footer {
-    width: 100%; /* Prend toute la largeur de la page */
-    height: 100px; /* Hauteur de 300 pixels */
-    background-color: red; /* Couleur de fond rouge */
-    bottom: 0;
-    /* position: fixed; */
-}
 
+</footer>
+
+</html>
+</body>
 
 
 
