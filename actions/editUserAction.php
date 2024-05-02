@@ -37,7 +37,7 @@ if (isset($_POST['validate'])) {
         }
 
         $_SESSION['success'] = "L'utilisateur $pseudo à été modifié avec succès.";
-        header('Location: ../gestion-utilisateurs');
+        header('Location: ../gestion-utilisateurs.php');
         exit();
         
 
