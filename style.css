@@ -1,12 +1,31 @@
 body{
     display : flex;
     flex-direction: column;
+    font-size: large;
 }
 header, footer{
 position: fixed;
 }
 .container{
 margin-top: 90px;
+margin-bottom: 50px;
+}
+
+h1, h2, h3, h4, a{
+    font-family: "Mate SC", serif;
+  font-weight: 1000;
+  font-style: normal;
+}
+
+.mate-sc{
+    font-family: "Mate SC", serif;
+  font-weight: 600;
+}
+
+p{
+    font-family: "Monda", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 :root {
@@ -15,12 +34,31 @@ margin-top: 90px;
     --secondary-color: #CDCB61;
     --black: #000000;
     --white: rgb(248, 252, 250);
-    --navbar-color: #d9d9d9
+    --navbar-color: #d9d9d9;
 }
 
 a:hover, button:hover{
     cursor:pointer;
   }
+
+.bouton{
+    background-color: var(--principal-color); 
+    color: white; 
+    padding: 25px; 
+    border: solid 2px white; 
+    border-radius: 9px;
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+}
+
+.bouton span {
+    display: block; /* Pour forcer le saut de ligne */
+}
+
+.bouton span:first-of-type {
+    font-size: xx-large; 
+}
 
 /*HEADER*/
   
@@ -38,14 +76,14 @@ a:hover, button:hover{
 }
 
 .navbar img {
-    width: 70px;
+    width: 60px;
     height: auto;
 }
   
 .navbar a {
     color: var(--black);
     text-decoration: none;
-    padding: 10px 20px; 
+    padding: 1px 20px; 
     border-radius: 5px; 
 }
   
@@ -55,6 +93,14 @@ a:hover, button:hover{
 
 a{
     text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+.texteCouleurPrincipale{
+    color : var(--principal-color)
 }
 
 
@@ -118,9 +164,13 @@ fieldset {
     margin-top: 10px;
     display: block;
 }
+.deconnexion {
+    color: var(--principal-color) !important;
+}
 
-h1 {
-    text-align: center;
+.deconnexion:hover {
+    color: var(--white) !important;
+    background-color: var(--principal-color) !important;
 }
 
 /*ACCUEIL*/
@@ -129,6 +179,14 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top : 5%;
+    margin-bottom : 5%;
+}
+
+.actionBouton{
+    flex: 1; /* Chaque bouton occupera une part égale de l'espace disponible */
+    margin: 0 10px; /* Espacement horizontal entre les boutons */
+    text-align: center;
 }
 
 .fonctionnement {
@@ -148,13 +206,20 @@ h1 {
     max-width: 100px;
 }
 
+#echange{
+    margin-top:100px;
+}
+
 .pourquoiMonnaie {
-    background-color:#ad529d ;
-    color:white;
+    background-color:var(--light-principal-color) ;
+    color:var(--black);
+    margin-top : 5%;
+    margin-bottom:5%;
 }
 
 .pourquoiMonnaie h3 {
-    text-align : center;padding-top:20px;
+    text-align : center;
+    padding-top:20px;
 }
 
 .pourquoiMonnaie section {
@@ -170,9 +235,13 @@ h1 {
     flex-wrap : wrap;
     flex-shrink: 1;
     padding: 20px;
-    margin: 10px;
     text-align: center;
     height: 50px;
+    margin-top:-70px;
+}
+
+.pourquoiMonnaie p img {
+    max-width: 100px;
 }
 
 .pourquoiMonnaie img{
@@ -184,24 +253,28 @@ h1 {
 }
 
 .valeur{
-    flex-basis: 25%;
+    flex-basis: 55%;
     flex-grow: 1;
     flex-shrink: 1;
     padding: 20px;
-    margin: 10px;
     text-align: justify;
     height: 250px;
+    margin-bottom : 10%;
 }
 
-.valeur {
-    margin-top : 70px;
+.valeurImg {
+    flex-basis: 35%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 20px;
+    height: 250px;
+    margin-top : -60px;
 }
 
-.valeur img {
+.valeurImg img {
     display: block; 
     margin: 0 auto;
-    min-width:400px;
-    margin-top:-100px;
+    min-width:300px;
 }
 
 .titreCentre{
@@ -247,9 +320,9 @@ h1 {
 footer {
     display : flex;
     width: 100%; /* Prend toute la largeur de la page */
-    height: 50px; /* Hauteur */
-    background-color: var(--principal-color); /* Couleur de fond */
-    color:var(--white);
+    height: 35px; /* Hauteur */
+    background-color: var(--secondary-color); /* Couleur de fond */
+    color:var(--black);
     bottom: 0;
     left:0;
     position: fixed;
@@ -257,12 +330,20 @@ footer {
 }
 
 footer a {
-    color: var(--white);
+    color: var(--black);
     text-decoration: underline;
 }
 
-footer a,
 footer p {
     margin: 10px;
-    flex-basis: 32%;
+    flex-basis: 40%;
+}
+
+footer a {
+    margin: 10px;
+    flex-basis: 28%;
+}
+
+footer img{
+    max-width: 22px;
 }

@@ -78,7 +78,7 @@ if (isset($_SESSION['errorMessage'])) { ?>
 
     
     <?php if ($peut_modifier) : ?>
-        <a href="actualite-edit.php?id=<?php echo $actualite['id_actualite']; ?>" style="background-color: #ad529d; color: white; padding: 10px; border: solid 2px white; border-radius: 9px;">Modifier</a>
+        <a class="bouton" href="actualite-edit.php?id=<?php echo $actualite['id_actualite']; ?>" >Modifier</a>
     <?php endif; ?>
 
     <?php if ($peut_supprimer) : ?>
