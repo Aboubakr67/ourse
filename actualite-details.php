@@ -1,11 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['auth'])) {
-    header('Location: index.php');
-    exit();
-}
-require('header.php');
+
 require('config/database.php');
 require('models/actualiteModel.php');
 
@@ -32,15 +28,19 @@ if (!$actualite) {
 $peut_modifier = false;
 $peut_supprimer = false;
 
-if ($_SESSION['role'] === 'user-redacteur' || $_SESSION['role'] === 'admin') {
+
+
+
+if (isset($_SESSION['role']) && ($_SESSION['role'] === 'user-redacteur' || $_SESSION['role'] === 'admin')) {
     $peut_modifier = true;
 }
 
-if ($_SESSION['role'] === 'admin') {
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
     $peut_supprimer = true;
 }
 
 
+require('header.php');
 ?>
 
 <?php

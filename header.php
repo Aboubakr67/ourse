@@ -29,6 +29,7 @@ date_default_timezone_set('Europe/Paris');
 <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
 <a href="index.php">Découvrez l'Ourse</a>
 <a href="adhesion.php">Adhérer</a>
+<a href="actualite.php">Actualités</a>
 <a href="la-carte.php">La carte</a>
 <?php if (isset($_SESSION['auth'])) { ?>
 <a href="actualite.php">Actualités</a>
