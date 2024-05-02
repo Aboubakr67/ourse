@@ -87,6 +87,9 @@ if (isset($_SESSION['errorMessage'])) { ?>
 
 
 </div>
+<div style="text-align: right;">
+    <u><a href="actualite.php" style="margin-right: 0;">Retour à la liste</a></u>
+</div>
 
 <style>
 

@@ -75,7 +75,7 @@ if (isset($_SESSION['errorMessage'])) { ?>
             // Vérifier si l'image de l'actualité existe dans le dossier d'upload
             if (in_array($actualite['image'], $fichiers_upload)) {
                 // Afficher l'image si elle existe
-                echo '<img src="' . $dossier_upload . $actualite['image'] . '" alt="' . $actualite['image'] . '">';
+                echo '<img style="margin-top: -10px;" src="' . $dossier_upload . $actualite['image'] . '" alt="' . $actualite['image'] . '">';
             } else {
                 // Afficher un message si l'image n'existe pas
                 echo '<p>Image non disponible</p>';

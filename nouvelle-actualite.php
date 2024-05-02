@@ -58,6 +58,9 @@ if (isset($_SESSION['errorMessage'])) { ?>
       </div>
       <button type="submit" class="btn btn-primary" name="validate">Valider</button>
 </form>
+<div style="text-align: right;">
+    <u><a href="actualite.php" style="margin-right: 0;">Retour à la liste</a></u>
+</div>
 
     <script>
     // Fonction pour afficher ou masquer le champ de l'heure en fonction de la sélection
