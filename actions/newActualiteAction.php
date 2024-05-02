@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['auth'])) {
+    header('Location: index.php');
+    exit();
+}
+
+
 require('../utils/check_extension.php');
 require('../config/database.php');
 require('../models/actualiteModel.php');
