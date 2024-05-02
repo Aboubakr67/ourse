@@ -99,4 +99,27 @@ function updateActualite($id_actualite, $titre, $description, $date, $heure, $no
     }
 }
 
+
+// Function qui permet de supprimer une actualité
+function deleteActualiteByID($id_actualite) {
+
+    $bdd = connexion();
+
+    try {
+        $stmt = $bdd->prepare("CALL deleteActualite(:p_id_actualite)");
+
+        $stmt->bindParam(':p_id_actualite', $id_actualite, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        return true;
+    } catch (PDOException $e) {
+        // Gérer les erreurs de base de données ici
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+
+
 ?>

@@ -112,7 +112,6 @@ DELIMITER ;
 
 
 -- Modifier une actualité
--- Modifier une actualité
 DELIMITER $$
 CREATE PROCEDURE UpdateActualite(
     IN p_id_actualite INT,
@@ -143,14 +142,24 @@ DELIMITER ;
 
 
 -- Appelle de la procédure
-CALL UpdateActualite(
-    2, 
-    'Nouveau titre', 
-    'Nouvelle description',
-    '2024-05-30', 
-    '15:00', 
-    'ourse66329520768ca.png', 
-    'Nouvelle ville', 
-    'http://example.com/nouveau-lien', 
-    3 
-);
+-- CALL UpdateActualite(
+--     2, 
+--     'Nouveau titre', 
+--     'Nouvelle description',
+--     '2024-05-30', 
+--     '15:00', 
+--     'ourse66329520768ca.png', 
+--     'Nouvelle ville', 
+--     'http://example.com/nouveau-lien', 
+--     3 
+-- );
+
+
+-- Supprimer une actualité
+DELIMITER $$
+CREATE PROCEDURE deleteActualite(IN p_id_actualite INT)
+BEGIN
+    DELETE FROM ACTUALITE WHERE id_actualite = p_id_actualite;
+END$$
+DELIMITER ;
+

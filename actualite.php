@@ -22,9 +22,22 @@ if (isset($_SESSION['success'])) { ?>
 <?php unset($_SESSION['success']); // Supprime le message d'erreur de la session
 } ?>
 
+<?php
+if (isset($_SESSION['errorMessage'])) { ?>
+  <div class="error-message" style="text-align:center; color: red;">
+    <?= $_SESSION['errorMessage']?>
+  </div>
+  <?php unset($_SESSION['errorMessage']); // Supprime le message d'erreur de la session
+  } ?>
+
 
 <h1 style="text-align:center; margin: 50px">Page actualite</h1>
-<a href="nouvelle-actualite.php" style="background-color: #ad529d; color: white; padding: 10px; border: solid 2px white; border-radius: 9px;">Nouvelle actualité</a>
+
+
+<?php if ($_SESSION['role'] === 'user-redacteur' || $_SESSION['role'] === 'admin'): ?>
+    <a href="nouvelle-actualite.php" style="background-color: #ad529d; color: white; padding: 10px; border: solid 2px white; border-radius: 9px;">Nouvelle actualité</a>
+<?php endif; ?>
+
 <!-- <section class="gridActus">
         <div class="actu"><h2>ACTU 1</h2><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non dolorem, placeat impedit officiis ex odit architecto temporibus ad, quas, quaerat nesciunt optio sequi laborum eius in dignissimos dolorum accusamus obcaecati!
         {{ actualite.contenu|u.truncate(100, '...')|raw }}

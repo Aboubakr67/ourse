@@ -51,6 +51,14 @@ if (isset($_SESSION['success'])) { ?>
 <?php unset($_SESSION['success']); // Supprime le message d'erreur de la session
 } ?>
 
+<?php
+if (isset($_SESSION['errorMessage'])) { ?>
+  <div class="error-message" style="text-align:center; color: red;">
+    <?= $_SESSION['errorMessage']?>
+  </div>
+  <?php unset($_SESSION['errorMessage']); // Supprime le message d'erreur de la session
+  } ?>
+
 
 <h1 style="text-align:center; margin: 50px"><?php echo $actualite['titre']; ?></h1>
 
@@ -74,16 +82,30 @@ if (isset($_SESSION['success'])) { ?>
     <?php endif; ?>
 
 
+    <!-- <?php if ($peut_supprimer) : ?>
+        <a href="actions/deleteActualiteAction.php?id=<?php echo $actualite['id_actualite']; ?>" style="background-color: red; color: white; padding: 10px; border: solid 2px white; border-radius: 9px;">Supprimer</a>
+    <?php endif; ?> -->
+
     <?php if ($peut_supprimer) : ?>
-        <a href="supprimer_actualite.php?id=<?php echo $actualite['id_actualite']; ?>" style="background-color: red; color: white; padding: 10px; border: solid 2px white; border-radius: 9px;">Supprimer</a>
+        <a href="javascript:void(0);" onclick="confirmDelete(<?php echo $actualite['id_actualite']; ?>)" style="background-color: red; color: white; padding: 10px; border: solid 2px white; border-radius: 9px;">Supprimer</a>
     <?php endif; ?>
 
 
 </div>
 
 
+<script>
+    function confirmDelete(id_actualite) {
+        if (confirm("Êtes-vous sûr de vouloir supprimer cette actualité ?")) {
+            window.location.href = "actions/deleteActualiteAction.php?id=" + id_actualite;
+        }
+    }
+</script>
+
 
 
 <?php
 require('footer.php');
 ?>
+
+
