@@ -30,9 +30,10 @@ if (isset($_SESSION['errorMessage'])) { ?>
 <h1 style="text-align:center; margin: 50px">Page actualite</h1>
 
 
-<?php if ($_SESSION['role'] === 'user-redacteur' || $_SESSION['role'] === 'admin'): ?>
+<?php if (isset($_SESSION['role']) && ($_SESSION['role'] === 'user-redacteur' || $_SESSION['role'] === 'admin')): ?>
     <a href="nouvelle-actualite.php" style="background-color: #ad529d; color: white; padding: 10px; border: solid 2px white; border-radius: 9px;">Nouvelle actualité</a>
 <?php endif; ?>
+
 
 <section class="grid">
     <?php
