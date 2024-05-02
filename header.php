@@ -18,9 +18,8 @@ date_default_timezone_set('Europe/Paris');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-grid.min.css" integrity="sha512-i1b/nzkVo97VN5WbEtaPebBG8REvjWeqNclJ6AItj7msdVcaveKrlIIByDpvjk5nwHjXkIqGZscVxOrTb9tsMA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
-
+ 
 <body>
-    
 <header>
 
  <!-- barre de navigation -->
@@ -28,9 +27,9 @@ date_default_timezone_set('Europe/Paris');
         <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
         <a href="index.php">Découvrez l'Ourse</a>
         <a href="adhesion.php">Adhérer</a>
+        <a href="la-carte.php">Nos professionnels</a>
         
         <?php if (isset($_SESSION['auth'])) { ?>
-            <a href="la-carte.php">Nos professionnels</a>
             <a href="actualite.php">Actualités</a>
             <a href="profil.php">Mon Profil</a>
             <a href="actions/deconnexion.php">Déconnexion</a>
@@ -44,3 +43,4 @@ date_default_timezone_set('Europe/Paris');
         <h1>Bonjour <?php echo $_SESSION['pseudo']; ?> !</h1>
         <?php } ?>
 </header>
+<div class="container">

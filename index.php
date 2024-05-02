@@ -3,7 +3,6 @@ session_start();
 require('header.php');
 require('config/database.php');
 ?>
-
 <img style="display: block; margin: 0 auto;margin-top:50px;min-width:700px;" src="./images/banniere.jpg" alt="banniere-ourse">
 <h1 style="text-align:center; margin: 40px">Bienvenue sur le site de l'OURSE !</h1>
 <p>
@@ -21,15 +20,15 @@ La monnaie locale participe à favoriser la résilience du territoire en mettan
 <section style="background-color:#ad529d ;color:white;">
     <h3 style="text-align : center;padding-top:20px;">POURQUOI UNE MONNAIE LOCALE ?</h3>
     <section style="display: flex;    flex-wrap: wrap;    justify-content: center;    align-items: center;">
-        <div style="color : white;flex-basis: 15%;flex-grow: 1;flex-wrap : wrap;flex-shrink: 1;padding: 20px;margin: 10px;text-align: center;
+        <div style="color : white;flex-basis: 13%;flex-grow: 1;flex-wrap : wrap;flex-shrink: 1;padding: 20px;margin: 10px;text-align: center;
     height: 50px;">IMPULSER <br></br>une consommation responsable</div>
-    <div style="color : white;flex-basis: 15%;flex-grow: 1;flex-wrap : wrap;flex-shrink: 1;padding: 20px;margin: 10px;text-align: center;
+    <div style="color : white;flex-basis: 13%;flex-grow: 1;flex-wrap : wrap;flex-shrink: 1;padding: 20px;margin: 10px;text-align: center;
     height: 50px;">DYNAMISER <br></br>l'économie locale</div>
-    <div ><img style="flex-basis: 15%;flex-grow: 1;flex-shrink: 1;text-align: center;
+    <div ><img style="flex-basis: 13%;flex-grow: 1;flex-shrink: 1;text-align: center;
     max-width: 300px;" src="./images/ourse.png" alt="ourse"></div>
-    <div style="color : white;flex-basis: 15%;flex-grow: 1;flex-wrap : wrap;flex-shrink: 1;padding: 20px;margin: 10px;text-align: center;
+    <div style="color : white;flex-basis: 13%;flex-grow: 1;flex-wrap : wrap;flex-shrink: 1;padding: 20px;margin: 10px;text-align: center;
     height: 50px;">FAVORISER <br></br>l'investissement écologique et solidaire</div>
-    <div style="color : white;flex-basis: 15%;flex-grow: 1;flex-wrap : wrap;flex-shrink: 1;padding: 20px;margin: 10px;text-align: center;
+    <div style="color : white;flex-basis: 13%;flex-grow: 1;flex-wrap : wrap;flex-shrink: 1;padding: 20px;margin: 10px;text-align: center;
     height: 50px;">SE REAPPROPIER <br></br>notre outil monétaire</div>
     </section>
 </section>

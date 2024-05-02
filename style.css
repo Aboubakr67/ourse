@@ -1,5 +1,12 @@
-body {
-    padding-top: 60px; 
+body{
+    display : flex;
+    flex-direction: column;
+}
+header, footer{
+position: fixed;
+}
+.container{
+margin-top: 70px;
 }
 
 :root {
@@ -22,13 +29,12 @@ a:hover, button:hover{
     top: 0;
     left: 0;
     width: 100%;
-    background-color:var(--secondary-color);
+    background-color:var(--white);
     display: flex;
     justify-content: space-around; 
     align-items: center;
-    padding: 10px 0; 
     z-index: 1000;
-    border-bottom: var(--secondary-color) solid 5px;
+    border-bottom: var(--secondary-color) solid 3px;
 }
 
 .navbar img {
@@ -144,3 +150,12 @@ h1 {
     max-width: 100px;
 }
 
+/*FOOTER*/
+footer {
+    width: 100%; /* Prend toute la largeur de la page */
+    height: 50px; /* Hauteur */
+    background-color: var(--principal-color); /* Couleur de fond */
+    bottom: 0;
+    left:0;
+    position: fixed;
+}
