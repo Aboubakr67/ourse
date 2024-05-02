@@ -35,7 +35,8 @@ if (isset($_POST['validate'])) {
                 $stmt->bindParam(':pseudo', $pseudo);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $password);
-                $stmt->bindParam(':role', "user-standard");
+                $role = "user-standard"; // Définir le rôle par défaut
+                $stmt->bindParam(':role', $role);
                 $stmt->execute();
 
 

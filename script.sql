@@ -163,3 +163,59 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+-- Récuperer tout les utilisateurs
+DELIMITER $$
+CREATE PROCEDURE GetUsers()
+BEGIN
+    SELECT id_user, pseudo, email, role
+    FROM USERS;
+END$$
+DELIMITER ;
+-- CALL GetUsers();
+
+
+-- Récuperer un seul utilisateur à l'aide de son id
+DELIMITER $$
+CREATE PROCEDURE GetUserByID(
+    IN p_id_user INT
+)
+BEGIN
+    SELECT id_user, pseudo, email, role FROM USERS WHERE id_user = p_id_user;
+END$$
+DELIMITER ;
+-- CALL GetUserByID();
+
+
+-- Modifier un utilisateur
+DELIMITER $$
+CREATE PROCEDURE UpdateUser(
+    IN p_id_user INT,
+    IN p_pseudo VARCHAR(50),
+    IN p_email VARCHAR(50),
+    IN p_role VARCHAR(50)
+)
+BEGIN
+    UPDATE USERS
+    SET pseudo = p_pseudo,
+        email = p_email,
+        role = p_role
+    WHERE id_user = p_id_user;
+END$$
+DELIMITER ;
+-- CALL UpdateUser();
+
+
+-- Supprimer un utilisateur
+DELIMITER $$
+CREATE PROCEDURE DeleteUserByID(
+    IN p_id_user INT
+)
+BEGIN
+    DELETE FROM USERS WHERE id_user = p_id_user;
+END$$
+DELIMITER ;
+-- CALL DeleteUserByID();
+
+
+

@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['auth'])) {
+if (!isset($_SESSION['auth']) || !isset($_SESSION['role']) || ($_SESSION['role'] !== 'admin' && $_SESSION['role'] !== 'user-redacteur')) {
     header('Location: index.php');
     exit();
 }
+
 
 require('../utils/check_extension.php');
 require('../config/database.php');

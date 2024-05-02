@@ -41,7 +41,7 @@ if(!$deleteActualite) {
 
 
 $_SESSION['success'] = "L'actualité à été supprimer avec succès.";
-header('Location: ../actualite');
+header('Location: ../actualite.php');
 exit();
 
 
