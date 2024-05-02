@@ -1,4 +1,5 @@
-<footer></footer>
+</div>
+<footer>ICI LE FOOTER</footer>
 
 <style>
     footer {
@@ -9,10 +10,10 @@
     /* position: fixed; */
 }
 
-</style>
 
 </html>
 </body>
+
 
 
 
