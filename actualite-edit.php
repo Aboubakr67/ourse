@@ -84,6 +84,57 @@ if (isset($_SESSION['errorMessage'])) { ?>
     <button type="submit" class="btn btn-primary" name="validate">Valider</button>
 </form>
 
+
+<style>
+
+/* Style pour les formulaires */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Style pour les étiquettes */
+.form-group label {
+    font-weight: bold;
+}
+
+/* Style pour les champs de saisie */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+/* Style pour les boutons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--principal-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ad417b;
+}
+
+/* Style pour les images prévisualisées */
+#image-preview {
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+</style>
+
 <script>
     // Afficher l'aperçu de la nouvelle image choisit
     function previewImage() {

@@ -31,7 +31,14 @@ date_default_timezone_set('Europe/Paris');
         
         <?php if (isset($_SESSION['auth'])) { ?>
             <a href="actualite.php">Actualités</a>
-            <a href="profil.php">Mon Profil</a>
+            
+            <?php if ($_SESSION['role'] === 'admin') { ?>
+            <a href="gestion-utilisateurs.php">Gestion utilisateurs</a>
+            <?php } else { ?>
+                <a href="profil.php">Mon Profil</a>
+            <?php } ?>
+
+
             <a href="actions/deconnexion.php">Déconnexion</a>
         <?php } else { ?>
             <a href="inscription.php">Inscription</a>
