@@ -33,6 +33,11 @@ date_default_timezone_set('Europe/Paris');
 <?php if (isset($_SESSION['auth'])) { ?>
 <a href="actualite.php">Actualités</a>
 <a href="profil.php">Profil de <?php echo $_SESSION['pseudo']; ?></a>
+
+    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === "admin") : ?>
+        <a href="gestion-utilisateurs.php">Gestion utilisateurs</a>
+    <?php endif; ?>
+
 <a class="deconnexion" href="actions/deconnexion.php">Déconnexion</a>
 <?php } else { ?>
 <a href="inscription.php">Inscription</a>
