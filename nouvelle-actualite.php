@@ -62,6 +62,62 @@ if (isset($_SESSION['errorMessage'])) { ?>
     <u><a href="actualite.php" style="margin-right: 0;">Retour à la liste</a></u>
 </div>
 
+<style>
+
+  /* Style pour les formulaires */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Style pour les étiquettes */
+.form-group label {
+    font-weight: bold;
+}
+
+/* Style pour les champs de saisie */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+/* Style pour les boutons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--principal-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ad417b;
+}
+
+/* Style pour les images prévisualisées */
+#image-preview {
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+/* Style spécifique pour le champ de saisie de fichier */
+.form-control-file {
+    width: auto; /* Retour à la largeur par défaut */
+}
+
+/* Style pour le lien de retour */
+div[style="text-align: right;"] {
+    text-align: left; /* Alignement à gauche */
+    margin-top: 20px; /* Ajout de marge en haut */
+}
+
+</style>
+
     <script>
     // Fonction pour afficher ou masquer le champ de l'heure en fonction de la sélection
     document.getElementById('change_date_event').addEventListener('change', function() {
