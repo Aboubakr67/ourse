@@ -32,7 +32,6 @@ date_default_timezone_set('Europe/Paris');
 <a href="actualite.php">Actualités</a>
 <a href="la-carte.php">La carte</a>
 <?php if (isset($_SESSION['auth'])) { ?>
-<a href="actualite.php">Actualités</a>
 <a href="profil.php">Profil de <?php echo $_SESSION['pseudo']; ?></a>
 
     <?php if (isset($_SESSION['role']) && $_SESSION['role'] === "admin") : ?>
