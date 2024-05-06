@@ -35,3 +35,9 @@ Avant d'installer et de tester l'application, assurez-vous d'avoir les élément
 5. Importez le script de base de données fourni dans votre système de gestion de base de données.
 6. Accédez au site via votre navigateur web en utilisant l'URL correspondante.
 7. Explorez et testez les fonctionnalités du site pour vous assurer du bon fonctionnement.
+
+## Liens vers les Sites
+
+- **Site actuel de l’OURSE**: [mlcc-ourse.org](https://mlcc-ourse.org/?OpeN)
+- **Notre site mis en production**: [http://145.239.198.216/ourse/index.php](http://145.239.198.216/ourse/index.php)
+
